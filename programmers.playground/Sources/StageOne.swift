@@ -5,6 +5,9 @@ public struct StageOne {
     
     public init() {}
     
+    
+    
+    
     // MARK:  Odd and Even
     
     public func isEvenOrOdd(_ num:Int) -> String {
@@ -120,6 +123,59 @@ public struct StageOne {
     
     public func descend(_ n:Int64) -> Int64 {
         return Int64(String(String(n).sorted{ $0 > $1 }))!
+    }
+    
+    
+    
+    
+    // MARK: N numbers spaced by x
+    
+    public func addSpace(_ x:Int, _ n:Int) -> [Int64] {
+        let arr = Array<Int>(1...n)
+        
+        return arr.map{ Int64($0 * x) }
+    }
+    
+    
+    
+    
+    // MARK: Find a number whose remainder is 1.
+    
+    public func getNumberRemainderOne(_ n:Int) -> Int {
+        var x = 1
+        
+        repeat { x += 1 } while n % x != 1
+
+        return x
+    }
+    
+    
+    
+    
+    // MARK: Sum between two integers
+    
+    public func sum(_ a:Int, _ b:Int) -> Int64 {
+        return Int64(max(a,b) - min(a,b) + 1) * Int64(a + b) / Int64(2)
+    }
+    
+    
+    
+    
+    // MARK: Find Kim Seobang in Seoul
+    
+    public func findKim(_ seoul:[String]) -> String {
+        let location = seoul.firstIndex(of: "Kim")
+        
+        return "김서방은 \(location!)에 있다"
+    }
+    
+    
+    
+    
+    // MARK: Hide cell phone number
+    
+    public func hidePhoneNumber(_ phone_number:String) -> String {
+        return String(repeating:"*", count:phone_number.count-4) + phone_number.suffix(4)
     }
     
 }

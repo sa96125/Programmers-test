@@ -18,4 +18,10 @@ test.AreNumbersOfPAndYEqual2("Pyy")
 test.isHarshadNumber(12)
 test.convertToInteger("-1234")
 test.descend(118372)
-    
+
+
+test.addSpace(2, 5)
+test.getNumberRemainderOne(12)
+test.sum(-3, 3)
+test.findKim(["Jane", "Kim"])
+test.hidePhoneNumber("01033334444")
