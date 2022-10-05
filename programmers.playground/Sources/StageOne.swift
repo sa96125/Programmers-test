@@ -178,4 +178,58 @@ public struct StageOne {
         return String(repeating:"*", count:phone_number.count-4) + phone_number.suffix(4)
     }
     
+    
+
+    
+    // MARK: Divisible array of numbers
+    
+    public func getDivisibleArray(_ arr:[Int], _ divisor:Int) -> [Int] {
+        let result = arr.filter{ $0 % divisor == 0 }.sorted{ $0 < $1 }
+        
+        return result.isEmpty ? [-1] : result
+    }
+    
+    
+    
+    
+    // MARK: Remove smallest number
+    
+    public func removeSmallestNumber(_ arr:[Int]) -> [Int] {
+        let min = arr.sorted(by: <)[0]
+        let result = arr.filter{ $0 != min }
+        
+        return result.isEmpty ? [-1] : result
+    }
+    
+    
+    
+    
+    // MARK: Add negative positive number
+
+    public func addNumbers(_ absolutes:[Int], _ signs:[Bool]) -> Int {
+        return absolutes
+                .enumerated()
+                .map{ signs[$0] ? $1 : -$1 }
+                .reduce(0, +)
+    }
+
+
+
+
+    // MARK: Add missing numbers
+
+    public func getTotalOfMissingNumber(_ numbers:[Int]) -> Int {
+        return 45 - numbers.reduce(0){$0 + $1}
+    }
+
+
+
+
+    // MARK: get middle text
+
+    public func getMiddleText(_ s:String) -> String {
+        return Array(s).count % 2 == 0
+            ? String(Array(s)[(s.count/2)-1...(s.count/2)])
+            : String(Array(s)[s.count/2])
+    }
 }
